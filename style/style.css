@@ -1,0 +1,68 @@
+*{margin: 0; box-sizing: border-box}
+.banner{width: 100%; float: left}
+    .banner img{width: 100%;}
+.nav{float: left; width: 100%; background: #000}
+    .nav li{float: left; width: 25%; list-style: none; text-align: center}
+    .nav a{display: block; width: 100%; padding: 10px; color: #fff; font-weight: bold; font-size: 20px; text-decoration: none }
+    .nav a:hover{background: #666}
+.center{text-align: center}    
+.content{float: left; width: 100%; padding: 15px}
+.resultado{display:none; float: left; width: 70%; text-align: center; border: 2px solid #00ff0d; background: #d8ffd5; padding: 15px; margin: 20px 15% 10px 15%; }
+
+
+/*.formulario{float: left; width: 70%; height:300px; margin: 20px 15%; border: 2px solid beige; border-radius: 10px }*/
+    /*.formularioInput{ width: 50%; padding: 0 5%;}*/
+    /*.formularioInput input[type = 'email']{width: 225%; height: 45px}*/
+    /*.formularioInput100{width: 100% !important;}*/
+    /*.formularioInput input[type='text']{width: 100%; height: 45px}*/
+    /*.formularioInput input[type='submit']{display: inline-block; margin: 15px 0; padding: 15px 30px; border: 0; cursor: pointer; background: #000000; color:white; font-weight: bold; text-align: center; border-radius: 10px }*/
+
+
+
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-contact {
+    width: 100%;
+    font-family: "Arial", Times, serif;
+}
+
+.form-contact-input {
+    width: 100%;
+    color: #292929;
+    font-size: 18px;
+    background-color: #E9E9E9;
+    border: 1px solid #E9E9E9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    text-indent: 20px;
+}
+
+.form-contact-button {
+    width: 100%;
+    font-size: 18px;
+    border-radius: 4px;
+    color: #fff;
+    height: 40px;
+    opacity: .8;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background: #B22222;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #500707;
+    border-right: 1px solid #500707;
+    transition: 1s;
+}
+
+.form-contact-button:hover {
+    opacity: 1;
+}
