@@ -23,7 +23,7 @@
             <li><a href="Cadastro.php">Cadastro</a></li>
             <li><a href="Selecao.php">Seleção</a></li>
             <li><a href="Delete.php">Delete</a></li>
-            <li><a href="Atualizacao.php">Atualização</a></li>
+            <li><a href="Enquete.php">Enquete</a></li>
         </div>
         
         

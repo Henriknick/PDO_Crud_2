@@ -30,12 +30,23 @@ class ClassCrud extends ClassConecta { //ESSA CLASSE HERDA TUDO QUE TEM NA Class
         $this->prepareStatments("insert into {$Tabela} values ({$Condicao})" , $Parametros);
         return $this->crud;
     }
-    
-//    public function selecao(){
-//        $cmd = $this->conectaBanco()->prepare("SELECT * FROM cliente");
-//        $cmd->execute();
-//        $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
-//        return $res;
-//        
-//    }
+
+    #Seleção no Banco de Dados
+    public function selectDB($Campos,$Tabela,$Condicao,$Parametros){
+        $this->prepareStatments("SELECT {$Campos} FROM {$Tabela} {$Condicao} ",$Parametros);
+        return $this->crud;
+    }
+
+    #Deleta no Banco de Dados
+    public function deletaDB($Tabela, $Condicao, $Parametros){
+        $this->prepareStatments("DELETE FROM {$Tabela} WHERE {$Condicao} ",$Parametros);
+        return $this->crud;
+    }
+
+    #Atualizar no Banco de Dados
+
+    public function atualizaBD($Tabela,$Set,$Condicao,$Parametros){
+       $this->prepareStatments("UPDATE {$Tabela} SET {$Set} WHERE {$Condicao}", $Parametros);
+        return $this->crud;
+    }
 }

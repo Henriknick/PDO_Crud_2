@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('#telefone').mask("(00) 0 0000-0000");
+
     $('.FormCadastro').validate({
         rules:{
             nome:{
@@ -19,6 +20,8 @@ $(document).ready(function(){
         },
 
         submitHandler:function(form){
+            var acao = $('#acao').val();
+            var id = $('#id').val();
             var nome = $('#nome').val();
             var telefone = $('#telefone').val();
             var mail = $('#email').val();
@@ -28,63 +31,29 @@ $(document).ready(function(){
             $.ajax({
                 url:'Controllers/ControllersCadastro.php',
                 method: 'POST',
-                data: {nome: nome, telefone:telefone, email:mail},
+                data: {acao: acao, id:id, nome: nome, telefone:telefone, email:mail},
                 success: function(result) {
                     $('form').trigger("reset");
-                    //$('.resultado').addClass("alert-success");
+                    $('input').val("");
                     $('.resultado').fadeIn().html(result);
                     setTimeout(function(){
                         $('.resultado').fadeOut('Slow');
-                    },2000);
+                    },3000);
                 }
             });
         }
-    })
-})
+    });
 
+    /*Confirmar exclusão no Banco*/
+    $('.deletar').on('click',function(event){
+        event.preventDefault();
+        var Link=$(this).attr('href');
+        if(confirm("Deseja mesmo apagar os dados")){
+            window.location.href=Link;
 
-//$(document).ready(function(){
-//    $("#FormCadastro").on('submit',function(event){
-//
-//        var nome = $('#nome').val();
-//        var telefone = $('#telefone').val();
-//        var mail = $('#email').val();
-//
-//
-//        event.preventDefault();
-//
-//
-//        //if (nome == '') {
-//        //    $('.resultado').html('Preencher o nome.');
-//        //    $('.resultado').addClass("alert-danger");
-//        //    return false;
-//        //}
-//
-//        //$('.resultado').html('');
-//        //if (fone == '') {
-//        //    $('.resultado').html('Preencher o telefone.');
-//        //    $('.resultado').addClass("alert-danger");
-//        //    return false;
-//        //}
-//        //$('.resultado').html('');
-//        //if (mail == '') {
-//        //    $('.resultado').html('Preencher a email.');
-//        //    $('.resultado').addClass("alert-danger");
-//        //    return false;
-//        //}
-//        //$('.resultado').html('');
-//        $.ajax({
-//            url:'Controllers/ControllersCadastro.php',
-//            method: 'POST',
-//            data: {nome: nome, telefone:telefone, email:mail},
-//            success: function(result) {
-//                $('form').trigger("reset");
-//                $('.resultado').addClass("alert-success");
-//                $('.resultado').fadeIn().html(result);
-//                setTimeout(function(){
-//                    $('.resultado').fadeOut('Slow');
-//                },2000);
-//            }
-//        });
-//    });
-//});
+            //window.location.href = 'Selecao.php';
+        }else{
+            return false;
+        }
+    });
+});

@@ -1,10 +1,18 @@
 <?php
+if(isset($_POST['acao'])){
+    $acao = filter_input(INPUT_POST,'acao',FILTER_SANITIZE_SPECIAL_CHARS);
+}elseif(isset($_GET['Acao'])){
+    $acao = filter_input(INPUT_GET,'acao',FILTER_SANITIZE_SPECIAL_CHARS);
+}else{
+    $acao = "";
+}
+
 if(isset($_POST['id'])){
-    $Id = filter_input(INPUT_POST,'id',FILTER_SANITIZE_SPECIAL_CHARS);
+    $id = filter_input(INPUT_POST,'id',FILTER_SANITIZE_SPECIAL_CHARS);
 }elseif(isset($_GET['id'])){ 
-    $Id=filter_input(INPUT_GET,'id',FILTER_SANITIZE_SPECIAL_CHARS);
+    $id=filter_input(INPUT_GET,'id',FILTER_SANITIZE_SPECIAL_CHARS);
 }else{ 
-    $Id="0"; 
+    $id="0";
 }
 
 if(isset($_POST['nome'])){
@@ -29,5 +37,13 @@ if(isset($_POST['email'])){
     $email=filter_input(INPUT_GET,'email',FILTER_SANITIZE_SPECIAL_CHARS);
 }else{ 
     $email=""; 
+}
+
+if(isset($_POST['radio'])){
+    $radio = filter_input(INPUT_POST,'radio',FILTER_SANITIZE_SPECIAL_CHARS);
+}elseif(isset($_GET['email'])){
+    $radio=filter_input(INPUT_GET,'radio',FILTER_SANITIZE_SPECIAL_CHARS);
+}else{
+    $radio="";
 }
 ?>
