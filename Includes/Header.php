@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="banner">
-            <a href="index.php"><img src="Images/Banner.jpg" alt="Banner Crud"></a>
+            <a href="index.php"><img src="Images/banner2.jpg" alt="Banner Web9 Solucoes"></a>
 
         </div>
 
